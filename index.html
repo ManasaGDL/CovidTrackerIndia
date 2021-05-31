@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>COVID-19 India Tracker</title>
+  <meta name="description" content="A Simple COVID-19 Tracker for India">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+  <div class="container-fluid ">
+    <header class="hero-image justify-content-center">
+
+      <h1 class="hero-text">Covid 19 India Tracker</h1>
+
+    </header>
+  </div>
+  <div class="container-fluid">
+
+
+    <div class="row justify-content-center">
+      <div class="col-lg-auto ">
+
+        <canvas id="pieChart" style="max-width: 300px;"></canvas>
+      </div>
+      <!-- confirmed cases -->
+      <div class=" col col-lg-2  justify-content-center">
+        <div class="card bg-warning mb-3" style="max-width:14rem;">
+          <div class="card-header text-center">
+
+            CONFIRMED</div>
+
+          <div class="card-body text-center">
+            <p class="confirmed card-text">&nbsp;</p>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- /*active cases*/ -->
+      <div class="col col-lg-2 ">
+        <div class="card  bg-primary mb-3" style="max-width:14rem;">
+          <div class=" card-header  text-center">
+
+            ACTIVE</div>
+          <div class="card-body  text-center">
+            <p class="active card-text">&nbsp;</p>
+          </div>
+        </div>
+      </div>
+
+      <!--deaths-->
+      <div class="col col-lg-2">
+        <div class="card bg-danger  mb-3" style="max-width:14rem;">
+          <div class=" card-header  text-center">
+
+            DEATHS
+          </div>
+          <div class="card-body text-center">
+            <p class="death card-text">&nbsp;</p>
+          </div>
+        </div>
+      </div>
+      <!--recovered-->
+      <div class="col col-lg-2 ">
+        <div class="card  bg-success mb-3" style="max-width:14rem;">
+          <div class=" card-header  text-center">
+
+            RECOVERED</div>
+          <div class="card-body  text-center">
+            <p class="active card-text">&nbsp;</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+<div class="container-fluid text-center">
+  <div class="form-check form-check-inline" id="stateselect">
+    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+    <label class="form-check-label" for="inlineRadio1"><b>Select State Wise</b></label>
+  </div>
+  <div class="form-check form-check-inline" id="allselect">
+    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+    <label class="form-check-label" for="inlineRadio2"><b>All States</b></label>
+  </div>
+  </div>
+
+
+
+
+
+
+  <div class="container-fluid ">
+
+
+    <form class="form-horizontal">
+      <div class="form-group col-md-4 my-menu">
+
+        <label for="inputState"><b></b></label>
+        <select class="form-control menu-data" id="inputState" style="font-weight: bold"  >
+          <option value="SelectState"  selected="selected">Select State</option>
+          <option value="Andhra Pradesh">Andhra Pradesh</option>
+          <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+          <option value="Assam">Assam</option>
+          <option value="Bihar">Bihar</option>
+          <option value="Chhattisgarh">Chhattisgarh</option>
+          <option value="Chandigarh">Chhattisgarh</option>
+          <option value="Goa">Goa</option>
+          <option value="Gujarat">Gujarat</option>
+          <option value="Haryana">Haryana</option>
+          <option value="Himachal Pradesh">Himachal Pradesh</option>
+          <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+          <option value="Jharkhand">Jharkhand</option>
+          <option value="Karnataka">Karnataka</option>
+          <option value="Kerala">Kerala</option>
+          <option value="Madhya Pradesh">Madhya Pradesh</option>
+          <option value="Maharashtra">Maharashtra</option>
+          <option value="Manipur">Manipur</option>
+          <option value="Meghalaya">Meghalaya</option>
+          <option value="Mizoram">Mizoram</option>
+          <option value="Nagaland">Nagaland</option>
+          <option value="Orissa">Odisha</option>
+          <option value="Punjab">Punjab</option>
+          <option value="Rajasthan">Rajasthan</option>
+          <option value="Sikkim">Sikkim</option>
+          <option value="Tamil Nadu">Tamil Nadu</option>
+          <option value="Telangana">Telangana</option>
+          <option value="Tripura">Tripura</option>
+          <option value="Uttaranchal">Uttaranchal</option>
+          <option value="Uttar Pradesh">Uttar Pradesh</option>
+          <option value="West Bengal">West Bengal</option>
+          <option disabled style="background-color:#aaa; color:#fff">UNION Territories</option>
+          <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+          <option value="Chandigarh">Chandigarh</option>
+          <option value="Dadar and Nagar Haveli and Daman and Diu">Dadar and Nagar Haveli</option>
+
+          <option value="Delhi">Delhi</option>
+          <option value="Lakshadeep">Lakshadeep</option>
+          <option value="Pondicherry">Pondicherry</option>
+
+
+        </select>
+<br><br><br>
+        <!-- <input id="button1" type="button" value="Click!" style="font-weight: bold"/> -->
+        <button class="btn btn-primary  pull-right " id="button1" type="button">Click</button>
+
+
+    </form>
+      </div>
+    <div style="overflow-x:auto;">
+
+      <div class="container table-class  ">
+
+        <table class="table table-striped " id="myTable" border="1">
+          <thead class="theader">
+            <tr>
+              <th class="tablehead " >State</th>
+              <th class="tablehead ">ActiveCases</th>
+              <th class="tablehead">ConfirmedCases</th>
+
+              <th class="tablehead">RecoveredCases</th>
+              <th class="tablehead">DeathCases</th>
+            </tr>
+          </thead>
+          <tbody id="tbodyid">
+            <!-- <tr><th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th></tr>
+<tr><th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th></tr>
+<tr><th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th></tr>
+<tr><th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th></tr>
+<tr><th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th></tr>
+<tr><th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th></tr> -->
+          </tbody>
+        </table>
+
+
+
+      </div>
+
+
+
+
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+      <script src="app.js"></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

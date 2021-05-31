@@ -1,0 +1,134 @@
+.hero-image{
+background-image:url("../images/hero-banner4.jpg");
+background-size: cover;
+    background-position: center;
+    padding:150px 150px;
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content:left;
+    align-items: center;
+    height:150px;
+    text-align: center;
+
+
+}
+.hero-text{
+  font-size:2rem;
+position:absolute;
+ margin: 0 auto;
+ background-color: #f8f5f1;
+padding:0.5rem;
+border-radius: 5px;
+text-align: right;
+}
+.container-fluid{
+
+
+    padding: 0;
+}
+.card{
+max-width:10rem;
+color:white;
+margin-left: 40px;
+}
+.card-header{
+font-weight: bold;
+}
+.card-text{
+    font-weight: bold;
+}
+
+.tablehead{
+  color:white;
+
+}
+.theader{
+  background-color:#185adb;
+}
+.statelabel{
+  font-size:1.5rem;
+  padding-bottom: 20px;
+  margin-left: 60px;
+}
+#inputState{
+  width:70%;
+}
+.my-menu{
+  left: 50%!important;
+  right: auto !important;
+  text-align: center !important;
+  transform: translate(-30%, 0) !important;
+   position:relative;
+}
+.table-class{
+padding-top: 40px;
+}
+.menu-data{
+  position:absolute;
+}
+.btn{
+  width:20%;
+}
+.table{
+  text-align: center;
+  padding-top: 0px;
+}
+.selectedstate{
+  text-align: center;
+  color:white;
+  background-color: #185adb;
+}
+.card-text{
+  font-size: 1rem;
+    font-weight: 700;
+}
+@media (max-width: 1250px) {
+
+    .card {
+      /* padding-top: 100px; */
+        padding: 10px 10px;
+        text-align: center;
+    }
+
+    .card-header {
+
+          font-size: 1rem;
+    }
+
+    .card-text {
+        font-size: 1rem;
+
+    }
+    .btn{
+      width:20%;
+    }
+}
+#myTable .col1{
+  text-align: left;
+}
+@media (max-width: 900px) {
+  .btn{
+    width:20%;
+    display:inline-block;
+  }
+.card {
+        padding: 5px 30px;
+    }
+
+    .card-header{
+padding:5px 30px;
+        font-size: 1rem;
+    }
+
+    .card-text {
+        font-size: 1rem;
+
+    }
+div label{
+left:0;
+display:relative;
+}
+.display-4 {
+    font-weight: 900;
+}
